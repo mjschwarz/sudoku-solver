@@ -17,9 +17,7 @@ public:
      * containing grid values.
      * @param file - file path of the .txt file
      */
-    explicit Grid(const std::string &file);
-
-    ~Grid();
+    explicit Grid(const std::string &file) noexcept;
 
     /**
      * Prints a formatted sudoku grid to the console.
@@ -54,7 +52,7 @@ private:
     /**
      * Sudoku grid to be solved.
      */
-    uint32_t **grid;
+    uint32_t grid[N][N];
 };
 
 #endif //SUDOKUSOLVER_GRID_H

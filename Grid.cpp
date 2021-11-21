@@ -1,10 +1,7 @@
 #include "Grid.h"
 #include <fstream>
 
-Grid::Grid(const std::string &file) : grid(new uint32_t *[N]) {
-    for (uint32_t i = 0; i < N; ++i)
-        grid[i] = new uint32_t[N];
-
+Grid::Grid(const std::string &file) noexcept : grid() {
     std::ifstream infile;
     infile.open(file.c_str());
     std::string val;
@@ -19,11 +16,6 @@ Grid::Grid(const std::string &file) : grid(new uint32_t *[N]) {
             ++row;
         }
     }
-}
-
-Grid::~Grid() {
-    for (uint32_t i = 0; i < N; ++i)
-        delete[] grid[i];
 }
 
 void Grid::printGrid() const noexcept {

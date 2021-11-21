@@ -17,13 +17,13 @@ std::string getFileInput() noexcept {
 }
 
 int main() {
-    Grid *grid = new Grid(getFileInput());
+    Grid grid = Grid(getFileInput());
 
     std::cout << "UNSOLVED Grid." << std::endl;
-    grid->printGrid();
+    grid.printGrid();
 
-    if (grid->solve()) {
+    if (grid.solve()) {
         std::cout << "SOLVED Grid." << std::endl;
-        grid->printGrid();
+        grid.printGrid();
     } else std::cout << "No Solution Found!" << std::endl;
 }
